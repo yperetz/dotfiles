@@ -139,7 +139,8 @@ export VISUAL=vim
 export PATH
 export HISTCONTROL=ignoreboth
 
-alias config='/usr/bin/git --git-dir=/home/yp/.cfg/ --work-tree=/home/yp'
+# alias config='/usr/bin/git --git-dir=/home/yp/.cfg/ --work-tree=/home/yp'
 alias rc='vim ~/.zsh'
 alias lyrics="clear && spotifycli --song && spotifycli --artist && spotifycli --album && echo "________________________" && spotifycli --lyrics"
 alias dotf='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp'
+alias dflog='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp log --graph --oneline'
