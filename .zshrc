@@ -3,6 +3,7 @@
 PATH="$HOME/.cargo/bin${PATH:+:${PATH}}"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/yp/.oh-my-zsh"
+export XDG_CONFIG_HOME="/home/yp/.config"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
