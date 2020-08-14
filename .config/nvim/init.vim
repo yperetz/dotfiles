@@ -10,11 +10,12 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'airblade/vim-gitgutter' " Viewing git changes
     Plug 'junegunn/limelight.vim' " Fucus on block
     Plug 'scrooloose/nerdtree' " fm integration
+    Plug 'tpope/vim-fugitive' " git support
     Plug 'Xuyuanp/nerdtree-git-plugin' " visual git status for nerdtre visual git status for nerdtree
-
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder for vim
     Plug 'junegunn/fzf.vim'
     Plug 'vim-scripts/TaskList.vim'
+    Plug 'scrooloose/nerdcommenter'
 "syntax
     Plug 'tpope/vim-markdown' " markdown support
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
@@ -26,6 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'blueshirts/darcula'
     Plug 'morhetz/gruvbox'
     Plug 'chriskempson/base16-vim'
+    Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 "ctrlp
@@ -160,6 +162,7 @@ set wildignore=*.o,*~,*.pyc " Ignore compiled files
 
 set encoding=UTF-8 " encoding you know
 
+set autochdir
 " commands and functions
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -291,6 +294,8 @@ nnoremap <leader>g :Goyo<CR>
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nb :NERDTreeFromBookmark<Space>
 map <leader>nf :NERDTreeFind<cr>
+nmap <leader>/ <plug>NERDCommenterToggle
+vmap <leader>/ <plug>NERDCommenterToggle
 
 " splits
 nnoremap <leader>sh :sf
