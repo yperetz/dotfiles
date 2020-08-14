@@ -145,3 +145,4 @@ alias rc='vim ~/.zsh'
 alias lyrics="clear && spotifycli --song && spotifycli --artist && spotifycli --album && echo "________________________" && spotifycli --lyrics"
 alias dotf='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp'
 alias dflog='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp log --graph --oneline'
+alias ddl='sps=Walk ; ddg  Walk lyrics'
