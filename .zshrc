@@ -3,6 +3,7 @@
 PATH="$HOME/.cargo/bin${PATH:+:${PATH}}"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/yp/.oh-my-zsh"
+export XDG_CONFIG_HOME="/home/yp/.config"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -139,7 +140,13 @@ export VISUAL=vim
 export PATH
 export HISTCONTROL=ignoreboth
 
-alias config='/usr/bin/git --git-dir=/home/yp/.cfg/ --work-tree=/home/yp'
+# alias config='/usr/bin/git --git-dir=/home/yp/.cfg/ --work-tree=/home/yp'
 alias rc='vim ~/.zsh'
 alias lyrics="clear && spotifycli --song && spotifycli --artist && spotifycli --album && echo "________________________" && spotifycli --lyrics"
 alias dotf='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp'
+alias dflog='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp log --graph --oneline'
+alias ddl='sps=Walk ; ddg  Walk lyrics'
+alias venv-new="/home/yp/Documents/scripts/new-venv"
+alias venv-activate="source venv/bin/activate"
+alias python="/usr/bin/python3"
+alias pip="/usr/bin/pip3"
