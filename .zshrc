@@ -146,3 +146,7 @@ alias lyrics="clear && spotifycli --song && spotifycli --artist && spotifycli --
 alias dotf='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp'
 alias dflog='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp log --graph --oneline'
 alias ddl='sps=Walk ; ddg  Walk lyrics'
+alias venv-new="/home/yp/Documents/scripts/new-venv"
+alias venv-activate="source venv/bin/activate"
+alias python="/usr/bin/python3"
+alias pip="/usr/bin/pip3"
