@@ -1,32 +1,34 @@
- "_   ________  ___  _____          ____                    __  _
+" _   ________  ___  _____          ____                    __  _
 "| | / /  _/  |/  / / ___/__  ___  / _(_)__ ___ _________ _/ /_(_)__  ___
 "| |/ // // /|_/ / / /__/ _ \/ _ \/ _/ / _ `/ // / __/ _ `/ __/ / _ \/ _ \
 "|___/___/_/  /_/  \___/\___/_//_/_//_/\_, /\_,_/_/  \_,_/\__/_/\___/_//_/
-                                     "/___/
-
- "________________________  __ _____    ________________________
+"                                     /___/
+"
+" ________________________  __ _____    ________________________
 "/___/___/___/___/___/___/ / // / _ \  /___/___/___/___/___/___/
-           "/___/___/___/  \_, / .__/ /___/___/___/
-                         "/___/_/
+"           /___/___/___/  \_, / .__/ /___/___/___/
+"                         /___/_/
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TODO 15/08/20 23:59 > replace ctrlp - FZF is much better :)
 call plug#begin('~/.config/nvim/plugged')
 "tools
-    Plug 'junegunn/goyo.vim' " no-distraction mode
-    Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search, MRU, and Buffer viewer
-    Plug 'maxbrunsfeld/vim-yankstack' " multiple yanks
-    Plug 'itchyny/lightline.vim' " equivalent to powerline
-    Plug 'airblade/vim-gitgutter' " Viewing git changes
-    Plug 'junegunn/limelight.vim' " Fucus on block
-    Plug 'scrooloose/nerdtree' " fm integration
-    Plug 'tpope/vim-fugitive' " git support
     Plug 'Xuyuanp/nerdtree-git-plugin' " visual git status for nerdtre visual git status for nerdtree
+    Plug 'airblade/vim-gitgutter' " Viewing git changes
+    Plug 'airblade/vim-rooter' " Viewing git changes
+    Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search, MRU, and Buffer viewer
+    Plug 'itchyny/lightline.vim' " equivalent to powerline
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder for vim
     Plug 'junegunn/fzf.vim'
-    Plug 'vim-scripts/TaskList.vim'
+    Plug 'junegunn/goyo.vim' " no-distraction mode
+    Plug 'junegunn/limelight.vim' " Fucus on block
+    Plug 'maxbrunsfeld/vim-yankstack' " multiple yanks
     Plug 'scrooloose/nerdcommenter'
+    Plug 'scrooloose/nerdtree' " fm integration
+    Plug 'tpope/vim-fugitive' " git support
+    Plug 'vim-scripts/TaskList.vim'
 "syntax
     Plug 'tpope/vim-markdown' " markdown support
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
@@ -35,7 +37,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'tpope/vim-surround' " surround with quotes
 
 "color-schemes
-    Plug 'blueshirts/darcula'
+    Plug 'doums/darcula'
     Plug 'morhetz/gruvbox'
     Plug 'chriskempson/base16-vim'
     Plug 'junegunn/seoul256.vim'
@@ -112,6 +114,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-python',
   \ 'coc-vimlsp',
+  \ 'coc-explorer',
   \ 'coc-json'
   \ ]
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -124,6 +127,41 @@ let g:markdown_fenced_languages = [
       \ 'vim',
       \ 'help'
       \]
+"coc explore
+let g:coc_explorer_global_presets = {
+\
+\   'tab': {
+\     'position': 'tab',
+\     'quit-on-open': v:true,
+\   },
+\   'floating': {
+\     'position': 'floating',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingLeftside': {
+\     'position': 'floating',
+\     'floating-position': 'left-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'floatingRightside': {
+\     'position': 'floating',
+\     'floating-position': 'right-center',
+\     'floating-width': 50,
+\     'open-action-strategy': 'sourceWindow',
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
+
+" Use preset argument to open it
+nmap <space>fe :CocCommand explorer --preset .vim<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,7 +185,7 @@ syntax enable
 set termguicolors " use GUI colors for the terminal
 set cursorline "highlight the line of the cursor
 set hlsearch " Highlight search results
-set autochdir "move to file's directory"
+"set autochdir "move to file's directory - disabled for vim-rooter.
 
 set laststatus=2
 set hidden " Sets buffers are hidden instead of closed when moved from set autoread " Set to auto read when a file is changed from the outside
@@ -437,11 +475,17 @@ set guioptions-=L
 "map <F5> :colorscheme spacegray<CR>
 
 "Color Settings
-colorscheme darcula
+colorscheme gruvbox
+"autocmd! BufEnter,BufNewFile *vim colo darcula
+"autocmd! filetype *vim colo darcula
+
+"autocmd! BufLeave *.html,*.vim,*xml colo gruvbox
+
 "
 "hi! Normal ctermbg=NONE guibg=NONE
 "hi! NonText ctermbg=NONE guibg=NONE guifg=NONE  ctermfg=NONE
 hi Search guibg=wheat guifg=purple
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "File Types
