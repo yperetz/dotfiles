@@ -90,6 +90,9 @@ export TERM=xterm-256color
 setopt correct
 set -o vi
 bindkey -v
+
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -150,3 +153,4 @@ alias venv-new="/home/yp/Documents/scripts/new-venv"
 alias venv-activate="source venv/bin/activate"
 alias python="/usr/bin/python3"
 alias pip="/usr/bin/pip3"
+alias aptls="aptitude search '~i!~M' | fzf"
