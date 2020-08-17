@@ -25,22 +25,22 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/goyo.vim' " no-distraction mode
     Plug 'junegunn/limelight.vim' " Fucus on block
     Plug 'maxbrunsfeld/vim-yankstack' " multiple yanks
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} " completion and more
     Plug 'scrooloose/nerdcommenter'
     Plug 'scrooloose/nerdtree' " fm integration
     Plug 'tpope/vim-fugitive' " git support
     Plug 'vim-scripts/TaskList.vim'
 "syntax
-    Plug 'tpope/vim-markdown' " markdown support
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
     " TODO 04/08/20 10:41 > need to fix markdown-preview not working
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} " completion and more
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
+    Plug 'tpope/vim-markdown' " markdown support
     Plug 'tpope/vim-surround' " surround with quotes
 
 "color-schemes
-    Plug 'doums/darcula'
-    Plug 'morhetz/gruvbox'
     Plug 'chriskempson/base16-vim'
+    Plug 'doums/darcula'
     Plug 'junegunn/seoul256.vim'
+    Plug 'morhetz/gruvbox'
 call plug#end()
 
 "ctrlp
@@ -83,6 +83,8 @@ let g:lightline = {
       \ 'separator': { 'left': ' ', 'right': ' ' },
       \ 'subseparator': { 'left': ' ', 'right': ' ' }
   \ }
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+
 function! FilenameForLightline() " Show full path of filename
     return expand('%')
 endfunction
@@ -127,6 +129,7 @@ let g:markdown_fenced_languages = [
       \ 'vim',
       \ 'help'
       \]
+
 "coc explore
 let g:coc_explorer_global_presets = {
 \
@@ -134,19 +137,11 @@ let g:coc_explorer_global_presets = {
 \     'position': 'tab',
 \     'quit-on-open': v:true,
 \   },
+\   '.init': {
+\     'root-uri': '~/.config/nvim',
+\   },
 \   'floating': {
 \     'position': 'floating',
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingTop': {
-\     'position': 'floating',
-\     'floating-position': 'center-top',
-\     'open-action-strategy': 'sourceWindow',
-\   },
-\   'floatingLeftside': {
-\     'position': 'floating',
-\     'floating-position': 'left-center',
-\     'floating-width': 50,
 \     'open-action-strategy': 'sourceWindow',
 \   },
 \   'floatingRightside': {
@@ -161,7 +156,6 @@ let g:coc_explorer_global_presets = {
 \ }
 
 " Use preset argument to open it
-nmap <space>fe :CocCommand explorer --preset .vim<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General Settings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -401,10 +395,10 @@ nnoremap tf  :tabfind<Space>
 nnoremap tq  :tabclose<CR>
 
 " Move a line of text using leader+[-=]
-nmap <Leader>- mz:m+<cr>`z
-nmap <Leader>= mz:m-2<cr>`z
-vmap <Leader>- :m'>+<cr>`<my`>mzgv`yo`z
-vmap <Leader>= :m'<-2<cr>`>my`<mzgv`yo`z
+nmap - mz:m+<cr>`z
+nmap + mz:m-2<cr>`z
+vmap - :m'>+<cr>`<my`>mzgv`yo`z
+vmap + :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Quickly open a buffer for scribble
 map <leader>q :e ~/Documents/.buffer<cr>
@@ -449,6 +443,10 @@ vnoremap <leader>s :sort<cr>
 " indentation w/o losing selectoin
 vnoremap < <gv
 
+" Explorer
+nmap <space>fl :CocCommand explorer --preset floatingRightside<CR>
+nmap <space>fe :CocCommand explorer --preset .init<CR>
+nmap <space>ff :CocCommand explorer<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gui
