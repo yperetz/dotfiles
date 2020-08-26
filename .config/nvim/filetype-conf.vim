@@ -19,3 +19,13 @@ au FileType python iab todo # TODO <c-r>=strftime("%d/%m/%y %H:%M")<cr> >
 " vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType vim iab todo " TODO <c-r>=strftime("%d/%m/%y %H:%M")<cr> >
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" bash
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" start with a skeleton
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/skeleton.sh
+  augroup END
+endif

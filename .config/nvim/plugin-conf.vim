@@ -15,9 +15,10 @@
 call plug#begin('~/.config/nvim/plugged')
 "tools
     "Plug 'Xuyuanp/nerdtree-git-plugin' " visual git status for nerdtre visual git status for nerdtree
+    "Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search, MRU, and Buffer viewer
+    "Plug 'scrooloose/nerdtree' " fm integration
     Plug 'airblade/vim-gitgutter' " Viewing git changes
     Plug 'airblade/vim-rooter' " Viewing git changes
-    "Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search, MRU, and Buffer viewer
     Plug 'itchyny/lightline.vim' " equivalent to powerline
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder for vim
     Plug 'junegunn/fzf.vim'
@@ -26,9 +27,9 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'maxbrunsfeld/vim-yankstack' " multiple yanks
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " completion and more
     Plug 'scrooloose/nerdcommenter' " comment in/out everywhere
-    "Plug 'scrooloose/nerdtree' " fm integration
     Plug 'tpope/vim-fugitive' " git support
     Plug 'vim-scripts/TaskList.vim' " Show TODOs
+    Plug 'vimwiki/vimwiki' " organize notes
 "syntax
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " markdown preview
     Plug 'tpope/vim-markdown' " markdown support
@@ -114,6 +115,12 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-wiki
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_list = [{'path': '~/Documents/vimwiki/pentesting',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COC
@@ -234,6 +241,7 @@ let g:markdown_fenced_languages = [
       \ 'help'
       \]
 
+let g:mkdp_auto_start = 0
 "coc-explorer
 "------------
 
@@ -270,7 +278,7 @@ autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | end
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 1
+let g:mkdp_auto_start = 0
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer

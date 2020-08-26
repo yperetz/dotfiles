@@ -230,6 +230,9 @@ nmap <leader>f  <Plug>(coc-format-selected)
 nnoremap <silent><nowait> <space>x  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" md preview
+nmap <leader>mm :MarkdownPreview<cr>
+nmap <leader>ms :MarkdownPreviewStop<cr>
 
 " splits
 nnoremap <leader>sh :sf
@@ -281,7 +284,7 @@ vmap - :m'>+<cr>`<my`>mzgv`yo`z
 vmap + :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Quickly open a buffer for scribble
-map <leader>q :e ~/Documents/.buffer<cr>
+map <leader>q :VimwikiIndex<space>
 " Quickly open a markdown buffer for scribble
 map <leader>x :e ~/Documents/.md-buffer.md<cr>
 " Quickly load config
