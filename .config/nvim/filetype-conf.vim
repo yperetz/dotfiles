@@ -29,3 +29,13 @@ if has("autocmd")
     autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/skeleton.sh
   augroup END
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" start with a skeleton
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.md 0r ~/.config/nvim/templates/skeleton.md
+  augroup END
+endif
