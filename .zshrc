@@ -28,7 +28,7 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+ DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -59,7 +59,7 @@ ZSH_THEME="agnoster"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -120,6 +120,7 @@ alias ls='exa -al --color=always --group-directories-first'
 neofetch
 alias vim='nvim'
 alias update="source ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
 
 # git alias
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
@@ -155,3 +156,6 @@ alias venv-activate="source venv/bin/activate"
 alias python="/usr/bin/python3"
 alias pip="/usr/bin/pip3"
 alias aptls="aptitude search '~i!~M' | fzf"
+alias allmd2pdf="$HOME/Documents/scripts/md-convert-all.sh"
+alias allmd2pdf-onefile="$HOME/Documents/scripts/md-convert-all-onefile.sh"
+alias open="xdg-open"

@@ -34,8 +34,15 @@ endif
 " markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " start with a skeleton
+"if has("autocmd")
+  "augroup templates
+    "autocmd BufNewFile *.md 0r ~/.config/nvim/templates/skeleton.md
+  "augroup END
+"endif
+
+" spelling on
 if has("autocmd")
   augroup templates
-    autocmd BufNewFile *.md 0r ~/.config/nvim/templates/skeleton.md
+   au BufNewFile,BufRead *.md setlocal spell spelllang=en_us
   augroup END
 endif
