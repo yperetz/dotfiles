@@ -19,3 +19,30 @@ au FileType python iab todo # TODO <c-r>=strftime("%d/%m/%y %H:%M")<cr> >
 " vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au FileType vim iab todo " TODO <c-r>=strftime("%d/%m/%y %H:%M")<cr> >
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" bash
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" start with a skeleton
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.sh 0r ~/.config/nvim/templates/skeleton.sh
+  augroup END
+endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" start with a skeleton
+"if has("autocmd")
+  "augroup templates
+    "autocmd BufNewFile *.md 0r ~/.config/nvim/templates/skeleton.md
+  "augroup END
+"endif
+
+" spelling on
+if has("autocmd")
+  augroup templates
+   au BufNewFile,BufRead *.md setlocal spell spelllang=en_us
+  augroup END
+endif

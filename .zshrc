@@ -1,9 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-PATH="$HOME/.cargo/bin${PATH:+:${PATH}}"
+PATH="/usr/local/itksnap-3.8.0-20190612-Linux-gcc64/bin:/usr/local/pycharm-community-2020.2.3/bin:$HOME/.cargo/bin${PATH:+:${PATH}}:$HOME/Documents/scripts"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/yp/.oh-my-zsh"
 export XDG_CONFIG_HOME="/home/yp/.config"
+
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -28,7 +29,7 @@ ZSH_THEME="agnoster"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -59,7 +60,7 @@ ZSH_THEME="agnoster"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="dd/mm/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -120,6 +121,7 @@ alias ls='exa -al --color=always --group-directories-first'
 neofetch
 alias vim='nvim'
 alias update="source ~/.zshrc"
+alias zshrc="nvim ~/.zshrc"
 
 # git alias
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
@@ -145,12 +147,33 @@ export HISTCONTROL=ignoreboth
 
 # alias config='/usr/bin/git --git-dir=/home/yp/.cfg/ --work-tree=/home/yp'
 alias rc='vim ~/.zsh'
-alias lyrics="clear && spotifycli --song && spotifycli --artist && spotifycli --album && echo "________________________" && spotifycli --lyrics"
+alias lyrics="clear && spotifycli --song && spotifycli --artist && spotifycli --album && echo "________________________" && lyrics-cli spotify"
 alias dotf='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp'
 alias dflog='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp log --graph --oneline'
-alias ddl='sps=Walk ; ddg  Walk lyrics'
+alias ddl='sps=$(spotifycli --song) ; ddg  "${sps} lyrics"'
+
 alias venv-new="/home/yp/Documents/scripts/new-venv"
 alias venv-activate="source venv/bin/activate"
-alias python="/usr/bin/python3"
-alias pip="/usr/bin/pip3"
+#alias python="/usr/bin/python3"
+#alias pip="/usr/bin/pip3"
 alias aptls="aptitude search '~i!~M' | fzf"
+alias allmd2pdf="$HOME/Documents/scripts/md-convert-all.sh"
+alias allmd2pdf-onefile="$HOME/Documents/scripts/md-convert-all-onefile.sh"
+alias open="xdg-open"
+source /opt/ros/noetic/setup.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yp/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yp/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yp/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yp/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
