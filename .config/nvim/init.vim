@@ -361,4 +361,9 @@ colorscheme gruvbox
 
 "hi! Normal ctermbg=NONE guibg=NONE
 "hi! NonText ctermbg=NONE guibg=NONE guifg=NONE  ctermfg=NONE
-hi Search guibg=wheat guifg=purple
+hi Search gui=NONE guibg=wheat guifg=purple
+
+hi Todo gui=NONE guibg=Yellow guifg=black
+syn match   myTodo   contained   "\<\(TODO\|FIXME\):"
+hi def link myTodo Todo
+
