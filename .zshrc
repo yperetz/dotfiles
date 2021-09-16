@@ -47,7 +47,7 @@ DISABLE_UPDATE_PROMPT="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -92,8 +92,8 @@ setopt correct
 set -o vi
 bindkey -v
 
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -135,11 +135,6 @@ alias rot1="xrandr --output DP-1 --rotate"
 alias sp="spotifycli"
 alias storage='du -h -d1'
 
-alias topten="history | commands | sort -rn | head"
-commands() {
-  awk '{a[$2]++}END{for(i in a){print a[i] " " i}}'
-}
-
 export EDITOR=vim
 export VISUAL=vim
 export PATH
@@ -160,20 +155,3 @@ alias aptls="aptitude search '~i!~M' | fzf"
 alias allmd2pdf="$HOME/Documents/scripts/md-convert-all.sh"
 alias allmd2pdf-onefile="$HOME/Documents/scripts/md-convert-all-onefile.sh"
 alias open="xdg-open"
-source /opt/ros/noetic/setup.zsh
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/yp/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/yp/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/yp/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/yp/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
