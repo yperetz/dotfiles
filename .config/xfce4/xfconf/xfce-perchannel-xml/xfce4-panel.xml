@@ -43,6 +43,9 @@
       <property name="show-frame" type="bool" value="false"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="size-max" type="uint" value="22"/>
+      <property name="names-ordered" type="array">
+        <value type="string" value="thunar"/>
+      </property>
     </property>
     <property name="plugin-6" type="string" value="notification-plugin"/>
     <property name="plugin-7" type="string" value="indicator">
@@ -62,6 +65,8 @@
       <property name="square-icons" type="bool" value="true"/>
       <property name="symbolic-icons" type="bool" value="true"/>
       <property name="known-items" type="array">
+        <value type="string" value="discord1"/>
+        <value type="string" value="ulauncher"/>
         <value type="string" value="blueman"/>
         <value type="string" value="nm-applet"/>
       </property>
@@ -71,7 +76,7 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="enable-mpris" type="bool" value="true"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
-      <property name="mpris-players" type="string" value="chromium.instance6777;firefox.instance103701;parole"/>
+      <property name="mpris-players" type="string" value="chromium.instance12095;chromium.instance6777;firefox.instance103701;parole;spotify"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-11" type="string" value="separator">
