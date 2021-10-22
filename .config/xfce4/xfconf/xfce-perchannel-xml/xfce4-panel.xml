@@ -44,6 +44,7 @@
       <property name="square-icons" type="bool" value="true"/>
       <property name="size-max" type="uint" value="22"/>
       <property name="names-ordered" type="array">
+        <value type="string" value="system-config-printer"/>
         <value type="string" value="thunar"/>
       </property>
     </property>
@@ -76,7 +77,7 @@
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
       <property name="enable-mpris" type="bool" value="true"/>
       <property name="mixer-command" type="string" value="pavucontrol"/>
-      <property name="mpris-players" type="string" value="chromium.instance12095;chromium.instance6777;firefox.instance103701;parole;spotify"/>
+      <property name="mpris-players" type="string" value="chromium.instance12095;chromium.instance1928;chromium.instance1961;chromium.instance1967;chromium.instance1989;chromium.instance2063;chromium.instance2118;chromium.instance2173;chromium.instance47203;chromium.instance4761;chromium.instance6777;chromium.instance9510;firefox.instance103701;firefox.instance3380;parole;spotify"/>
       <property name="show-notifications" type="bool" value="true"/>
     </property>
     <property name="plugin-11" type="string" value="separator">

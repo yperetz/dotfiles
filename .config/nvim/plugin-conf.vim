@@ -130,7 +130,7 @@ let g:coc_global_extensions = [
   \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint',
-  \ 'coc-python',
+  \ 'coc-pyright',
   \ 'coc-vimlsp',
   \ 'coc-explorer',
   \ 'coc-json'

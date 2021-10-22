@@ -155,3 +155,19 @@ alias aptls="aptitude search '~i!~M' | fzf"
 alias allmd2pdf="$HOME/Documents/scripts/md-convert-all.sh"
 alias allmd2pdf-onefile="$HOME/Documents/scripts/md-convert-all-onefile.sh"
 alias open="xdg-open"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yp/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yp/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yp/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yp/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
