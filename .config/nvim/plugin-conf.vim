@@ -133,7 +133,8 @@ let g:coc_global_extensions = [
   \ 'coc-pyright',
   \ 'coc-vimlsp',
   \ 'coc-explorer',
-  \ 'coc-json'
+  \ 'coc-json',
+  \ 'coc-clangd'
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.

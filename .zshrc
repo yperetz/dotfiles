@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-PATH="/usr/local/itksnap-3.8.0-20190612-Linux-gcc64/bin:/usr/local/pycharm-community-2020.2.3/bin:$HOME/.cargo/bin${PATH:+:${PATH}}:$HOME/Documents/scripts"
+PATH="/usr/local/itksnap-3.8.0-20190612-Linux-gcc64/bin:/usr/local/pycharm-community-2020.2.3/bin:$HOME/.cargo/bin${PATH:+:${PATH}}:$HOME/Documents/scripts:$HOME/Applications"
 # Path to your oh-my-zsh installation.
 export ZSH="/home/yp/.oh-my-zsh"
 export XDG_CONFIG_HOME="/home/yp/.config"
@@ -103,7 +103,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # Compilation flags
@@ -171,3 +171,19 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+path+=('/opt/clion-2021.3.3/bin')
+path+=('/opt/FileZilla3/bin')
+export PATH
+
+export HOWDOI_COLORIZE=1
+#export HOWDOI_DISABLE_CACHE=1
+#export HOWDOI_DISABLE_SSL=1
+export HOWDOI_SEARCH_ENGINE=google
+#export HOWDOI_URL=serverfault.com
+
+function hdi()
+{
+    howdoi -n 2 $@ | bat
+}
+alias sc="source $HOME/.zshrc"
+#alias hdi='howdi() { howdoi -n 2 $1 | bat};howdi'

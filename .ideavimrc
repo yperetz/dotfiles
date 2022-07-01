@@ -143,7 +143,7 @@ vmap <leader>r <Action>(Replace)
 map <silent> <leader><cr> :noh<cr>
 
 " Visual mode pressing * or # searches for the current selection
-vmap # <Action>(FindUsagesInFile)
+vmap <leader># <Action>(FindUsagesInFile)
 
 " tab navigation
 nnoremap tl :tabnext<CR>
@@ -172,6 +172,9 @@ vnoremap <leader>s :sort<cr>
 " indentation w/o losing selectoin
 vnoremap < <gv
 vnoremap > >gv
+
+" show usages
+nnoremap gu :action ShowUsages<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Gui
