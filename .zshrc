@@ -60,7 +60,7 @@ COMPLETION_WAITING_DOTS="true"
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-HIST_STAMPS="dd/mm/yyyy"
+HIST_STAMPS="dd.mm.yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -118,7 +118,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='exa -al --color=always --group-directories-first'
-neofetch
+if [[ -z $SECONDARY ]]; then
+  neofetch
+fi
 alias vim='nvim'
 alias update="source ~/.zshrc"
 alias zshrc="nvim ~/.zshrc"
