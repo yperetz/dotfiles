@@ -57,6 +57,19 @@
     use_custom_command = True
     custom_command = nvim %F
     use_system_font = False
+  [[secondary]]
+    allow_bold = False
+    background_color = "#282828"
+    background_darkness = 0.93
+    background_type = transparent
+    cursor_color = "#7c6f64"
+    font = JetBrainsMono Nerd Font 11
+    foreground_color = "#ebdbb2"
+    scrollbar_position = hidden
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    login_shell = True
+    custom_command = df -h;export SECONDARY=1 && source $HOME/.zshrc; zsh
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child0]]]
@@ -92,14 +105,16 @@
       type = Terminal
       parent = child3
       order = 0
-      profile = default
+      profile = secondary
       uuid = 3051b042-cb5b-4bba-989d-0534709856da
+      command = date +"%d/%m/%Y" | figlet -f digital && date +"WW: %U" | figlet -f digital && cal -B 1 -A 4;export SECONDARY=1 && source $HOME/.zshrc; zsh
     [[[terminal5]]]
       type = Terminal
       parent = child3
       order = 1
-      profile = default
+      profile = secondary
       uuid = ea2ee018-9c5e-43e0-9b9c-1de67075b5f8
+      command = df -h;export SECONDARY=1 && source $HOME/.zshrc; zsh
   [[mono]]
     [[[child0]]]
       type = Window
@@ -110,6 +125,41 @@
       fullscreen = False
       size = 866, 558
       title = MonoTerminal
+      last_active_term = ea2ee018-9c5e-43e0-9b9c-1de67075b5f8
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = ea2ee018-9c5e-43e0-9b9c-1de67075b5f8
+  [[vim-left]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 1920:0
+      maximised = False
+      fullscreen = False
+      size = 958, 1055
+      title = vim
+      last_active_term = ea2ee018-9c5e-43e0-9b9c-1de67075b5f8
+      last_active_window = True
+    [[[terminal1]]]
+      type = Terminal
+      parent = child0
+      order = 0
+      profile = default
+      uuid = ea2ee018-9c5e-43e0-9b9c-1de67075b5f8
+  [[vim-fs]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 1920:0
+      maximised = True
+      fullscreen = False
+      size = 1920, 1056
       last_active_term = ea2ee018-9c5e-43e0-9b9c-1de67075b5f8
       last_active_window = True
     [[[terminal1]]]
