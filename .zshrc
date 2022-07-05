@@ -117,10 +117,17 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# handle multiple screens
 alias ls='exa -al --color=always --group-directories-first'
 if [[ -z $SECONDARY ]]; then
   neofetch
+elif [ $SECONDARY -eq 1 ]; then
+  date +"%d/%m/%Y" | figlet -f digital && date +"WW: %U" | figlet -f digital && cal -B 1 -A 4
+elif [ $SECONDARY -eq 2 ]; then
+  df -h
 fi
+
 alias vim='nvim'
 alias update="source ~/.zshrc"
 alias zshrc="nvim ~/.zshrc"
@@ -143,7 +150,7 @@ export PATH
 export HISTCONTROL=ignoreboth
 
 # alias config='/usr/bin/git --git-dir=/home/yp/.cfg/ --work-tree=/home/yp'
-alias rc='vim ~/.zsh'
+alias rc='vim $HOME/.zshrc'
 alias lyrics="clear && spotifycli --song && spotifycli --artist && spotifycli --album && echo "________________________" && lyrics-cli spotify"
 alias dotf='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp'
 alias dflog='/usr/bin/git --git-dir=/home/yp/.dotfiles/ --work-tree=/home/yp log --graph --oneline'

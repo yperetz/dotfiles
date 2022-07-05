@@ -107,14 +107,14 @@
       order = 0
       profile = secondary
       uuid = 3051b042-cb5b-4bba-989d-0534709856da
-      command = date +"%d/%m/%Y" | figlet -f digital && date +"WW: %U" | figlet -f digital && cal -B 1 -A 4;export SECONDARY=1 && source $HOME/.zshrc; zsh
+      command = export SECONDARY=1 && zsh
     [[[terminal5]]]
       type = Terminal
       parent = child3
       order = 1
       profile = secondary
       uuid = ea2ee018-9c5e-43e0-9b9c-1de67075b5f8
-      command = df -h;export SECONDARY=1 && source $HOME/.zshrc; zsh
+      command = export SECONDARY=2 && zsh
   [[mono]]
     [[[child0]]]
       type = Window
