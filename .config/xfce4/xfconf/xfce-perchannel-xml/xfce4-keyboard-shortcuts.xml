@@ -59,7 +59,6 @@
       </property>
       <property name="&lt;Super&gt;m" type="string" value="exo-open --launch MailReader"/>
       <property name="&lt;Primary&gt;Escape" type="string" value="xfce4-popup-whiskermenu"/>
-      <property name="&lt;Super&gt;1" type="string" value="parole"/>
       <property name="XF86Calculator" type="string" value="mate-calc"/>
       <property name="XF86HomePage" type="string" value="exo-open --launch WebBrowser"/>
       <property name="&lt;Alt&gt;Print" type="string" value="xfce4-screenshooter -w"/>
@@ -197,6 +196,7 @@
       <property name="override" type="bool" value="true"/>
       <property name="&lt;Shift&gt;&lt;Super&gt;Up" type="string" value="maximize_window_key"/>
       <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
+      <property name="&lt;Super&gt;1" type="string" value="switch_application_key"/>
     </property>
   </property>
   <property name="providers" type="array">

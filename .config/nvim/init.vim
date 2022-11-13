@@ -10,119 +10,18 @@
 "                         /___/_/
 
 " Source other files
+source $XDG_CONFIG_HOME/nvim/general.vim
+source $XDG_CONFIG_HOME/nvim/keymaps.vim
 source $XDG_CONFIG_HOME/nvim/plugin-conf.vim
 source $XDG_CONFIG_HOME/nvim/filetype-conf.vim
 
-" TODO 15/08/20 23:59 > replace ctrlp - FZF is much better :)
 
-" Use preset argument to open it
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General Settings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
-
-set incsearch " Incremental search view
-set magic " behaviour of slash in patterns
-set ignorecase " case sensitivity
-set smartcase " no ignorecase when using upper case in search pattern
-
-set wrap " wrap long lines
-set showbreak=⤥\ \
-set so=7 " Set 7 lines to the cursor - when moving vertically using j/k
-set nu " Show line numbers
-set rnu " Show relative line numbers
-set lbr "enable linebreak after 'tw' characters
-set list "enable shoing whitespaces"
-set lcs=tab:›\ ‹,trail:᎑,nbsp:+ "whitespaces symbols"
-set shortmess+=c" Don't pass messages to |ins-completion-menu|.
-
-set background=dark " the background color brightness
-syntax enable
-set termguicolors " use GUI colors for the terminal
-set cursorline "highlight the line of the cursor
-set hlsearch " Highlight search results
-"set autochdir "move to file's directory - disabled for vim-rooter.
-
-set laststatus=2
-set hidden " Sets buffers are hidden instead of closed when moved from set autoread " Set to auto read when a file is changed from the outside
-set splitbelow splitright " split directions
-
-set mouse=a " enable mouse in all modes
-
-set showcmd " show partial commands on statusline
-set ruler "Always show current position
-set confirm " start a dialog when a command fails
-
-set clipboard=unnamedplus " using the clipboard as default register
-set cmdheight=2 " Give more space for displaying messages.
-
-set backspace=indent,eol,start " backspace behaviour
-set tw=500 " number of characters per line (in which it breaks)
-set updatetime=300 " shorter delay for improved performance
-
-set smarttab autoindent smartindent expandtab  " <tab> behaviour
-set shiftwidth=4 tabstop=8 softtabstop=4 " <tab> widths
-
-set nowritebackup " don't backup before writing
-set nobackup " don't backup after writing
-set noswapfile " dont write swap files
-set ffs=unix,dos,mac " Use Unix as the standard file type
-
-" TODO 08/08/20 13:55 > define folding
-
-set history=500 " Sets how many lines of history VIM has to remember
-set wildmenu " Turn on the Wild menu
-"set wildignore=*.o,*~,*.pyc " Ignore compiled files
-
-set encoding=UTF-8 " encoding you know
-
-filetype plugin indent on
-
-" commands and functions
+"Functions
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-command! W execute 'w !sudo tee % > /dev/null' <bar> edit! " (useful for handling the permission-denied error)  :W sudo saves the file
-
-"clean extra spaces on save
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.wiki,*.sh,*.coffee,*.vim :call CleanExtraSpaces()
-endif
 
 "source init after each save
 autocmd! bufwritepost ~/.config/nvim/init.vim source ~/.config/nvim/init.vim
 
-" add wildignores based on system
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
-
-" Delete trailing white space on save, useful for some filetypes ;)
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-
-" overwrite DiffOrig to show syntax-highlighting (by forcing filetype)
-command! -bar DiffOrig
-    \   vnew +set\ buftype=nofile
-    \ | let &filetype = getbufvar(0, '&filetype')
-    \ | read ++edit #
-    \ | 1delete_
-    \ | diffthis
-    \ | wincmd p
-    \ | diffthis
-
-" restore cursor position
-autocmd BufReadPost
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-  \ |   exe "normal! g`\""
-  \ | endif
 
 " Don't close window, when deleting a buffer
 command! Bclose call <SID>BufcloseCloseIt()
@@ -193,15 +92,9 @@ func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
 
-"key-bindings
-"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-let mapleader=","
-
-" Run command under cursor in shell
-nnoremap Q !!sh<CR>
 
 " plugin bindings
+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 nnoremap <leader>g :Goyo<CR>
 map <leader>nn :NERDTreeToggle<cr>
 map <leader>nf :NERDTreeFind<cr>
@@ -234,6 +127,9 @@ nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 nmap <leader>mm :MarkdownPreview<cr>
 nmap <leader>ms :MarkdownPreviewStop<cr>
 
+" window bindings
+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 " splits
 nnoremap <leader>sh :sf
 nnoremap <leader>ss :vert sf
@@ -244,23 +140,12 @@ nnoremap <Down> :resize -2<CR>
 nnoremap <Left> :vertical resize -2<CR>
 nnoremap <Right> :vertical resize +2<CR>
 
-" navigating windows
-nnoremap <leader>h <C-W>h
-nnoremap <leader>j <C-W>j
-nnoremap <leader>k <C-W>k
-nnoremap <leader>l <C-W>l
-
-" saving
-nmap <leader>ww :w<cr>
-nmap <leader>ws :W<cr>
 
 " Visual mode pressing * or # searches for the current selection
 vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
 vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-" turn off highlight-searching
-map <silent> <leader><cr> :noh<cr>
 
 " Close the current buffer
 map <leader>bq :bd<cr>
@@ -271,17 +156,6 @@ map <leader>bh :bprevious<cr>
 map <leader>bo :BufOnly<cr>
 "show buffers
 nmap <leader>bb :Buffers<cr>
-" tab navigation
-nnoremap tl :tabnext<CR>
-nnoremap th :tabprev<CR>
-nnoremap tf  :tabfind<Space>
-nnoremap tq  :tabclose<CR>
-
-" Move a line of text using leader+[-=]
-nmap - mz:m+<cr>`z
-nmap + mz:m-2<cr>`z
-vmap - :m'>+<cr>`<my`>mzgv`yo`z
-vmap + :m'<-2<cr>`>my`<mzgv`yo`z
 
 " Quickly open a buffer for scribble
 map <leader>q :VimwikiIndex<space>
@@ -294,8 +168,6 @@ map <leader>e :e! $XDG_CONFIG_HOME/nvim/init.vim<cr>
 nmap <m-s> <Plug>MarkdownPreview
 nmap <space>m <Plug>MarkdownPreviewToggle
 
-" easier exit from insert mode
-imap jk <esc>
 "create shell buffer
 nmap <leader>r :bo 15sp +te<cr>
 
@@ -322,12 +194,6 @@ iab xdt <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
 iab xdate <c-r>=strftime("%d/%m/%y")<cr>
 iab xtime <c-r>=strftime("%H:%M:%S")<cr>
 
-" sort alphabettically
-vnoremap <leader>s :sort<cr>
-
-" indentation w/o losing selectoin
-vnoremap < <gv
-
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -335,18 +201,6 @@ nnoremap <silent> K :call <SID>show_documentation()<CR>
 " Gui
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set font according to system
-if has("mac") || has("macunix")
-    set gfn=IBM\ Plex\ Mono:h14,Hack:h14,Source\ Code\ Pro:h15,Menlo:h15
-elseif has("win16") || has("win32")
-    set gfn=IBM\ Plex\ Mono:h14,Source\ Code\ Pro:h12,Bitstream\ Vera\ Sans\ Mono:h11
-elseif has("gui_gtk2")
-    set gfn=IBM\ Plex\ Mono\ 14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
-elseif has("linux")
-    set gfn=IBM\ Plex\ Mono\ 14,:Hack\ 14,Source\ Code\ Pro\ 12,Bitstream\ Vera\ Sans\ Mono\ 11
-elseif has("unix")
-    set gfn=Monospace\ 11
-endif
 
 " Disable scrollbars (real hackers don't use scrollbars for navigation!)
 set guioptions-=r

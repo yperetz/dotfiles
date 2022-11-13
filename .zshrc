@@ -118,15 +118,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# handle multiple screens
-alias ls='exa -al --color=always --group-directories-first'
-if [[ -z $SECONDARY ]]; then
-  neofetch
-elif [ $SECONDARY -eq 1 ]; then
-  date +"%d/%m/%Y" | figlet -f digital && date +"WW: %U" | figlet -f digital && cal -B 1 -A 4
-elif [ $SECONDARY -eq 2 ]; then
-  df -h
-fi
 
 alias vim='nvim'
 alias update="source ~/.zshrc"
@@ -179,6 +170,16 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# handle multiple screens
+alias ls='exa -al --color=always --group-directories-first'
+if [[ -z $SECONDARY ]]; then
+  neofetch
+elif [ $SECONDARY -eq 1 ]; then
+  date +"%d/%m/%Y" | figlet -f digital && date +"WW: %U" | figlet -f digital && cal -B 1 -A 4
+elif [ $SECONDARY -eq 2 ]; then
+  df -h | grep -v loop | grep -v tmpfs && echo "---------------------------" && lsblk -a | grep -v loop && conda activate scientificProject && cd $HOME/PycharmProjects/scientificProject
+fi
 
 path+=('/opt/clion-2021.3.3/bin')
 path+=('/opt/FileZilla3/bin')

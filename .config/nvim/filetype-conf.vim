@@ -44,5 +44,6 @@ endif
 if has("autocmd")
   augroup templates
    au BufNewFile,BufRead *.md setlocal spell spelllang=en_us
+   au BufNewFile,BufRead *.txt setlocal spell spelllang=en_us
   augroup END
 endif

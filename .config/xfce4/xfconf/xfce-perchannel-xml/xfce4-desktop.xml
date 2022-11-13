@@ -8,6 +8,8 @@
       <property name="show-filesystem" type="empty"/>
       <property name="show-removable" type="empty"/>
       <property name="show-trash" type="empty"/>
+      <property name="show-network-removable" type="bool" value="true"/>
+      <property name="show-device-removable" type="bool" value="false"/>
     </property>
     <property name="icon-size" type="empty"/>
     <property name="tooltip-size" type="double" value="50.000000"/>
@@ -87,7 +89,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/yp/Pictures/rick-morty-dual-screen2.jpg"/>
+          <property name="last-image" type="string" value="/home/yp/Pictures/portalmiddle2560x1024.jpg"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -95,6 +97,23 @@
           <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
         </property>
         <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-0" type="empty">
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
+        </property>
+        <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
           <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>

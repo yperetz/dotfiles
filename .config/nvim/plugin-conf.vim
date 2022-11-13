@@ -14,9 +14,9 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.config/nvim/plugged')
 "tools
-    "Plug 'Xuyuanp/nerdtree-git-plugin' " visual git status for nerdtre visual git status for nerdtree
+    Plug 'Xuyuanp/nerdtree-git-plugin' " visual git status for nerdtre visual git status for nerdtree
     "Plug 'ctrlpvim/ctrlp.vim' " Fuzzy search, MRU, and Buffer viewer
-    "Plug 'scrooloose/nerdtree' " fm integration
+    Plug 'scrooloose/nerdtree' " fm integration
     Plug 'airblade/vim-gitgutter' " Viewing git changes
     Plug 'airblade/vim-rooter' " Viewing git changes
     Plug 'itchyny/lightline.vim' " equivalent to powerline
@@ -55,14 +55,14 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nerd Tree
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let g:NERDTreeWinPos = "right"
-"let NERDTreeShowHidden=1
+let g:NERDTreeWinPos = "right"
+let NERDTreeShowHidden=1
 
-"let NERDTreeIgnore = ['\.pyc$', '__pycache__']
-"let g:NERDTreeWinSize=35
-"let g:NERDTreeDirArrows = 1
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let g:NERDTreeWinSize=35
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " lightline
