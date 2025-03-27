@@ -1,0 +1,49 @@
+return {
+}
+--     {
+--         'saghen/blink.cmp',
+--         dependencies = { 'L3MON4D3/LuaSnip', version = 'v2.*' },
+--         -- optional: provides snippets for the snippet source
+--
+--         -- use a release tag to download pre-built binaries
+--         version = '*',
+--
+--         ---@module 'blink.cmp'
+--         ---@type blink.cmp.Config
+--         opts = {
+--             -- All presets have the following mappings:
+--             -- C-space: Open menu or open docs if already open
+--             -- C-n/C-p or Up/Down: Select next/previous item
+--             -- C-e: Hide menu
+--             -- C-k: Toggle signature help (if signature.enabled = true)
+--             --
+--             -- See :h blink-cmp-config-keymap for defining your own keymap
+--
+--
+--             snippets = { preset = 'luasnip' },
+--             -- ensure you have the `snippets` source (enabled by default)
+--             appearance = {
+--                 -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
+--                 -- Adjusts spacing to ensure icons are aligned
+--                 nerd_font_variant = 'mono',
+--                 use_nvim_cmp_as_default = true
+--             },
+--
+--             fuzzy = { implementation = "lua" },
+--             keymap = {
+--                 -- set to 'none' to disable the 'default' preset
+--                 preset = 'default',
+--
+--                 ['<Up>'] = { 'select_prev', 'fallback' },
+--                 ['<Down>'] = { 'select_next', 'fallback' },
+--
+--                 -- disable a keymap from the preset
+--                 ['<C-e>'] = {},
+--
+--                 -- show with a list of providers
+--                 ['<C-space>'] = { function(cmp) cmp.show({ providers = { 'snippets' } }) end },
+--
+--             }
+--         }
+--     }
+-- }

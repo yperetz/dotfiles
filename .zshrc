@@ -101,7 +101,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
   export EDITOR='nvim'
 fi
@@ -122,6 +122,7 @@ fi
 alias vim='nvim'
 alias update="source ~/.zshrc"
 alias zshrc="nvim ~/.zshrc"
+alias bat="batcat"
 
 # git alias
 alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
@@ -181,19 +182,10 @@ elif [ $SECONDARY -eq 2 ]; then
   df -h | grep -v loop | grep -v tmpfs && echo "---------------------------" && lsblk -a | grep -v loop && conda activate scientificProject && cd $HOME/PycharmProjects/scientificProject
 fi
 
-path+=('/opt/clion-2021.3.3/bin')
-path+=('/opt/FileZilla3/bin')
-export PATH
-
-export HOWDOI_COLORIZE=1
-#export HOWDOI_DISABLE_CACHE=1
-#export HOWDOI_DISABLE_SSL=1
-export HOWDOI_SEARCH_ENGINE=google
-#export HOWDOI_URL=serverfault.com
-
-function hdi()
-{
-    howdoi -n 2 $@ | bat
-}
 alias sc="source $HOME/.zshrc"
-#alias hdi='howdi() { howdoi -n 2 $1 | bat};howdi'
+
+PATH="/home/yp/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/yp/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/yp/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/yp/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/yp/perl5"; export PERL_MM_OPT;

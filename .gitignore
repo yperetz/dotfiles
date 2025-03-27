@@ -1,0 +1,9 @@
+.config/nvim/.netrwhist
+.config/nvim/lazy-lock.json
+.config/plank/*
+.config/xfce4/desktop/*
+.config/xfce4/help.rc
+.config/xfce4/xfce4-screenshooter
+.config/xfce4/xfconf/*
+.config/xfce4/panel/whiskermenu-1.rc
+.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml

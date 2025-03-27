@@ -1,6 +1,26 @@
 [xfdesktop-version-4.10.3+-rcfile_format]
 4.10.3+=true
 
+[/home/yp/Desktop/DCIM]
+row=6
+col=0
+
+[/home/yp/Desktop/arduino-arduinoide.desktop]
+row=3
+col=0
+
+[/home/yp/Desktop/steam.desktop]
+row=4
+col=0
+
+[/home/yp/Desktop/Homework3.pdf]
+row=7
+col=0
+
+[/home/yp/Desktop/brave-jgclhcifjnkepcjdfhcnfjgojgddndpj-Default.desktop]
+row=5
+col=0
+
 [Trash]
 row=0
 col=0
