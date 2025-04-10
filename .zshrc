@@ -118,6 +118,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+zstyle ':completion:*' special-dirs true
 
 alias vim='nvim'
 alias update="source ~/.zshrc"

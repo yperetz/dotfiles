@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>v', vim.cmd.Lexplore)
 local keymap = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
+
 -- Todo-comments
 vim.keymap.set("n", "]t", function()
     require("todo-comments").jump_next()
@@ -31,6 +32,14 @@ end, { desc = "Previous todo comment" })
 
 -- Run command under cursor in shell
 keymap("n", "Q", "!!sh<CR>", opts)
+
+-- Quick notes
+keymap("n", "<leader>ee", ":e ~/Documents/notes/quick.md<CR>", opts)
+keymap("n", "<leader>el", ":e ~/Documents/notes/to-learn.md<CR>", opts)
+
+-- Splitting
+keymap("n", "<leader>ss", ":vs ", opts)
+keymap("n", "<leader>sh", ":split ", opts)
 
 -- Navigating windows
 keymap("n", "<leader>h", "<C-W>h", opts)

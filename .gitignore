@@ -7,3 +7,5 @@
 .config/xfce4/xfconf/*
 .config/xfce4/panel/whiskermenu-1.rc
 .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
+.config/fish/*
+.config/xfce4/panel/xfce4-clipman-actions.xml

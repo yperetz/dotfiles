@@ -1,0 +1,25 @@
+[alias]
+	co = checkout
+	wdiff = diff --word-diff
+	last = log -1 HEAD --stat
+	cm = commit -s -m
+	amend = commit --amend
+ 
+[grep]
+	lineNumber = true
+[merge]
+	conflictstyle = diff3
+	tool = nvimdiff
+[user]
+	name = yperetz
+	email = yperetz26@gmail.com
+[diff]
+	tool = nvimdiff
+[diff "tool.nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = true
+[mergetool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
