@@ -102,8 +102,10 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='nvim'
+  export VISUAL=vim
 else
   export EDITOR='nvim'
+  export VISUAL=vim
 fi
 
 # Compilation flags
@@ -137,8 +139,6 @@ alias rot1="xrandr --output DP-1 --rotate"
 alias sp="spotifycli"
 alias storage='du -h -d1'
 
-export EDITOR=vim
-export VISUAL=vim
 export PATH
 export HISTCONTROL=ignoreboth
 
@@ -158,21 +158,6 @@ alias allmd2pdf="$HOME/Documents/scripts/md-convert-all.sh"
 alias allmd2pdf-onefile="$HOME/Documents/scripts/md-convert-all-onefile.sh"
 alias open="xdg-open"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/yp/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/yp/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/yp/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/yp/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # handle multiple screens
 alias ls='exa -al --color=always --group-directories-first'
 if [[ -z $SECONDARY ]]; then
@@ -180,9 +165,25 @@ if [[ -z $SECONDARY ]]; then
 elif [ $SECONDARY -eq 1 ]; then
   date +"%d/%m/%Y" | figlet -f digital && date +"WW: %U" | figlet -f digital && cal -B 1 -A 4
 elif [ $SECONDARY -eq 2 ]; then
-  df -h | grep -v loop | grep -v tmpfs && echo "---------------------------" && lsblk -a | grep -v loop && conda activate scientificProject && cd $HOME/PycharmProjects/scientificProject
+  df -h | grep -v loop | grep -v tmpfs && echo "---------------------------" && lsblk -a | grep -v loop
 fi
 
+path+=('/opt/clion-2021.3.3/bin')
+path+=('/opt/FileZilla3/bin')
+export PATH
+export fpath=(~/.zsh/functions $fpath)
+autoload -U compinit && compinit
+
+export HOWDOI_COLORIZE=1
+#export HOWDOI_DISABLE_CACHE=1
+#export HOWDOI_DISABLE_SSL=1
+export HOWDOI_SEARCH_ENGINE=google
+#export HOWDOI_URL=serverfault.com
+
+function hdi()
+{
+    howdoi -n 2 $@ | bat
+}
 alias sc="source $HOME/.zshrc"
 
 PATH="/home/yp/perl5/bin${PATH:+:${PATH}}"; export PATH;

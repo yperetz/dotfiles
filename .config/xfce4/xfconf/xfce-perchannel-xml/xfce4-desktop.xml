@@ -17,7 +17,7 @@
   <property name="backdrop" type="empty">
     <property name="screen0" type="empty">
       <property name="monitor0" type="empty">
-        <property name="image-path" type="string" value="/home/yp/Pictures/wp9221335-4k-orange-black-wallpapers.jpg"/>
+        <property name="image-path" type="string" value="/home/yp/Pictures/104530.jpg"/>
         <property name="image-style" type="empty"/>
         <property name="image-show" type="empty"/>
         <property name="workspace0" type="empty">
@@ -34,11 +34,6 @@
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
           <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace3" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/yp/Pictures/wp9221335-4k-orange-black-wallpapers.jpg"/>
         </property>
       </property>
       <property name="monitor1" type="empty">
@@ -72,83 +67,12 @@
           <property name="image-style" type="int" value="5"/>
           <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
         </property>
-        <property name="workspace3" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/yp/Pictures/wp9221335-4k-orange-black-wallpapers.jpg"/>
-        </property>
-      </property>
-      <property name="monitoreDP-1-1" type="empty">
-        <property name="workspace0" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/yp/Pictures/964473.jpg"/>
-        </property>
-        <property name="workspace1" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace2" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace3" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/yp/Pictures/wp9221335-4k-orange-black-wallpapers.jpg"/>
-        </property>
-      </property>
-      <property name="monitorHDMI-1-1" type="empty">
-        <property name="workspace0" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace1" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace2" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace3" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-      </property>
-      <property name="monitorHDMI-1" type="empty">
-        <property name="workspace0" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace1" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace2" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
-        <property name="workspace3" type="empty">
-          <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
-        </property>
       </property>
       <property name="monitorDP-1" type="empty">
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="6"/>
-          <property name="last-image" type="string" value="/home/yp/Pictures/portalmiddle2560x1024.jpg"/>
+          <property name="last-image" type="string" value="/home/yp/Pictures/104530.jpg"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -164,8 +88,15 @@
       <property name="monitorDP-3" type="empty">
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
-          <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/home/yp/Pictures/portalmiddle2560x1024.jpg"/>
+          <property name="image-style" type="int" value="4"/>
+          <property name="last-image" type="string" value="/home/yp/Pictures/104530.jpg"/>
+          <property name="backdrop-cycle-enable" type="bool" value="false"/>
+          <property name="rgba1" type="array">
+            <value type="double" value="0.560784"/>
+            <value type="double" value="0.941176"/>
+            <value type="double" value="0.643137"/>
+            <value type="double" value="1.000000"/>
+          </property>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -195,7 +126,30 @@
           <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
         </property>
       </property>
+      <property name="monitorDP-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="6"/>
+          <property name="last-image" type="string" value="/home/yp/Pictures/104530.jpg"/>
+          <property name="backdrop-cycle-enable" type="bool" value="false"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/xfce4/backdrops/xubuntu-wallpaper.png"/>
+        </property>
+      </property>
     </property>
+    <property name="single-workspace-mode" type="bool" value="false"/>
+    <property name="single-workspace-number" type="int" value="0"/>
+  </property>
+  <property name="desktop-menu" type="empty">
+    <property name="show" type="empty"/>
   </property>
   <property name="windowlist-menu" type="empty">
     <property name="show" type="bool" value="true"/>
